@@ -1,0 +1,80 @@
+// Clicking
+
+// element.click(): Clicks on the element.
+const button = await $('button');
+await button.click();
+
+// Typing/Setting Value
+
+// element.setValue(value): Sets the value of an input field.
+const input = await $('input');
+await input.setValue('test value');
+
+// Getting Value/Text
+
+// element.getValue(): Gets the value of an input field.
+const inputValue = await $('input').getValue();
+
+// element.getText(): Gets the visible text of the element.
+const text = await $('h1').getText();
+
+// Clearing Value
+
+// element.clearValue(): Clears the value of an input field.
+await input.clearValue();
+
+// Selecting Options
+
+// element.selectByAttribute(attribute, value): Selects an option from a dropdown by attribute.
+const selectBox = await $('select');
+await selectBox.selectByAttribute('value', 'option1');
+
+// element.selectByVisibleText(text): Selects an option from a dropdown by visible text.
+await selectBox.selectByVisibleText('Option 1');
+
+// element.selectByIndex(index): Selects an option from a dropdown by index.
+await selectBox.selectByIndex(1);
+
+// Getting Attributes
+
+// element.getAttribute(attribute): Gets the value of an attribute.
+const attributeValue = await $('img').getAttribute('src');
+
+// Hovering
+
+// element.moveTo(): Moves the mouse to the element.
+const elementToHover = await $('#elementId');
+await elementToHover.moveTo();
+
+// Scrolling
+
+// element.scrollIntoView(): Scrolls the element into view.
+await elementToHover.scrollIntoView();
+
+// Double Click
+
+// element.doubleClick(): Double-clicks on the element.
+await button.doubleClick();
+
+// Right Click
+
+// element.rightClick(): Right-clicks on the element.
+await elementToHover.rightClick();
+
+// Drag and Drop
+
+// element.dragAndDrop(target): Drags the element to another element.
+const source = await $('#sourceElementId');
+const target = await $('#targetElementId');
+await source.dragAndDrop(target);
+
+// Waiting for Element
+
+// element.waitForDisplayed(timeout): Waits for the element to be displayed.
+await elementToHover.waitForDisplayed({ timeout: 5000 });
+
+// element.waitForEnabled(timeout): Waits for the element to be enabled.
+await elementToHover.waitForEnabled({ timeout: 5000 });
+
+// element.waitForExist(timeout): Waits for the element to exist.
+await elementToHover.waitForExist({ timeout: 5000 });
